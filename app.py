@@ -11,7 +11,16 @@ def hello():
 @app.route("/webhook", methods=['POST'])
 def webhook():
     print("recieved")
-    json.dump(request.json, open("input.json", "w"), indent=4, sort_keys=True)
+    response = request.get_json(silent=True, force=True)
+    processRequest(response)
     return "Hello, 2"
+
+# queryResult -> intent -> endInteraction
+
+def processRequest(response):
+
+    query_response = response["queryResult"]
+    text = query_response.get("fulfillmentText", None)
+    print(text)
 
 app.run(port=5000)

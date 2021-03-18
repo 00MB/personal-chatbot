@@ -1,8 +1,7 @@
 import os
 import dialogflow
-import smtplib #Emails
-from email.message import EmailMessage
-from send_email import send_email
+
+import send_email
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -12,6 +11,11 @@ def send_message():
     project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
     response = detect_intent_texts(project_id, "unique", message, 'en')
     print(response)
+    if response == "Brb":
+        EMAIL_ADDRESS = os.getenv('SENDER_EMAIL')
+        EMAIL_PASSWORD = os.getenv('SENDER_PASSWORD')
+        EMAIL_RECIEVER = os.getenv('RECIEVER_EMAIL')
+        send_email.send_email(EMAIL_ADDRESS, EMAIL_PASSWORD, EMAIL_RECIEVER)
 
 def detect_intent_texts(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()

@@ -1,14 +1,17 @@
-def send_email(user, time):
-    EMAIL_ADDRESS = "test@gmail.com" #Replace with os.environ.get('EMAIL_USER')
-    EMAIL_PASSWORD = "pass"
-    text = f"Your time has been confirmed for {time}"
+import smtplib #Emails
+from email.message import EmailMessage
+from datetime import datetime
 
+def send_email(EMAIL_ADDRESS, EMAIL_PASSWORD, EMAIL_RECIEVER):
+
+    text = "You have a new conversation waiting!"
     msg = EmailMessage()
-    msg['Subject'] = "AutoBookMe - Your confirmed time"
+    msg['Subject'] = f"Michael, new conversation at {datetime.now()}"
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = user.email
+    msg['To'] = EMAIL_RECIEVER
     msg.set_content(text)
 
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
         smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         smtp.send_message(msg)
+        print("email sent")

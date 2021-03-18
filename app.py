@@ -1,26 +1,20 @@
-from flask import Flask, request, make_response
-import json
-import os
+# from flask import Flask, request, make_response, jsonify
+# import json
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return "Hello, world"
+# #OPTIONAL - FOR WEBHOOKS
 
-@app.route("/webhook", methods=['POST'])
-def webhook():
-    print("recieved")
-    response = request.get_json(silent=True, force=True)
-    processRequest(response)
-    return "Hello, 2"
+# Required:
+#   Ngrok
 
-# queryResult -> intent -> endInteraction
+# # @app.route("/webhook", methods=['POST'])
+# # def webhook():
+# #     print("recieved")
+# #     response = request.get_json(silent=True, force=True)
+# #     return
 
-def processRequest(response):
-
-    query_response = response["queryResult"]
-    text = query_response.get("fulfillmentText", None)
-    print(text)
-
-app.run(port=5000)
+# # def processRequest(response):
+# #     query_response = response["queryResult"]
+# #     text = query_response.get("fulfillmentText", None)
+# #     print(text)

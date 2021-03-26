@@ -15,4 +15,4 @@
 
 ## Help   
 1. Setup Google Diagflow ([video help](https://www.youtube.com/watch?v=DkZmVLHoCLo&t=2784s&ab_channel=KevinD))    
-2. Setup Ngrok and Flask ([video help](https://www.youtube.com/watch?v=3Ac8urt6Nps&ab_channel=AIatUCF))    
+2. Setup Ngrok and Flask ([video help](https://www.youtube.com/watch?v=3Ac8urt6Nps&ab_channel=AIatUCF)) (not necessary)

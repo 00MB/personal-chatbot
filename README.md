@@ -5,6 +5,7 @@
 ## Created for   
 - Tinder   
 - Whatsapp   
+- Twitch   
 - Discord   
 - Idk maybe you could add something else?
 

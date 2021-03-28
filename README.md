@@ -1,6 +1,6 @@
 # My personal chat bot
 
-## Talk to me (demo): [here](https://bot.dialogflow.com/michael)
+## Talk to me (demo): [here](https://bot.dialogflow.com/michaelbeer)
 
 ## Created for   
 - Tinder   
